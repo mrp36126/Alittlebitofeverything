@@ -3,38 +3,82 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>My Website</title>
+    <title>A Little Bit of Everything</title>
     <link rel="stylesheet" href="styles.css">
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap" rel="stylesheet">
 </head>
 <body>
     <header>
-        <h1>My Website</h1>
+        <nav class="main-nav">
+            <ul>
+                <li><a href="#racing" class="active">Racing</a></li>
+                <li><a href="#rugby">Rugby</a></li>
+                <li><a href="#sports">Sports</a></li>
+                <li><a href="#news">News</a></li>
+            </ul>
+        </nav>
     </header>
-    <nav>
-        <ul>
-            <li><a href="#racing">Racing</a></li>
-            <li><a href="#rugby">Rugby</a></li>
-            <li><a href="#sports">Sports</a></li>
-            <li><a href="#news">News</a></li>
-        </ul>
-    </nav>
     <main>
-        <section id="racing">
-            <h2>Racing</h2>
-            <p>Welcome to the Racing section. Add your content here!</p>
-        </section>
-        <section id="rugby">
-            <h2>Rugby</h2>
-            <p>Welcome to the Rugby section. Add your content here!</p>
-        </section>
-        <section id="sports">
-            <h2>Sports</h2>
-            <p>Welcome to the Sports section. Add your content here!</p>
-        </section>
-        <section id="news">
-            <h2>News</h2>
-            <p>Welcome to the News section. Add your content here!</p>
-        </section>
+        <div id="racing" class="content-section active">
+            <div class="tile">
+                <img src="https://via.placeholder.com/300x200" alt="Racing Image">
+                <h3>F1 Update</h3>
+                <p>Red Bull dominates the Bahrain Grand Prix on March 10, 2025!</p>
+            </div>
+            <div class="tile">
+                <img src="https://via.placeholder.com/300x200" alt="Racing Image">
+                <h3>IndyCar Preview</h3>
+                <p>St. Pete opener set to thrill this weekend.</p>
+            </div>
+        </div>
+        <div id="rugby" class="content-section">
+            <div class="tile">
+                <img src="https://via.placeholder.com/300x200" alt="Rugby Image">
+                <h3>Six Nations</h3>
+                <p>England vs. France clash this Saturday!</p>
+            </div>
+            <div class="tile">
+                <img src="https://via.placeholder.com/300x200" alt="Rugby Image">
+                <h3>Rugby World Cup</h3>
+                <p>Next tournament details revealed.</p>
+            </div>
+        </div>
+        <div id="sports" class="content-section">
+            <div class="tile">
+                <img src="https://via.placeholder.com/300x200" alt="Sports Image">
+                <h3>NBA Highlights</h3>
+                <p>LeBron breaks another record on March 9, 2025!</p>
+            </div>
+            <div class="tile">
+                <img src="https://via.placeholder.com/300x200" alt="Sports Image">
+                <p>MLB Season Start</p>
+                <p>Baseball returns with a bang!</p>
+            </div>
+        </div>
+        <div id="news" class="content-section">
+            <div class="tile">
+                <img src="https://via.placeholder.com/300x200" alt="News Image">
+                <h3>Streaming Launch</h3>
+                <p>New sports service goes live today, March 10, 2025!</p>
+            </div>
+            <div class="tile">
+                <img src="https://via.placeholder.com/300x200" alt="News Image">
+                <h3>Tech in Sports</h3>
+                <p>Innovations shaping the future of athletics.</p>
+            </div>
+        </div>
     </main>
+    <script>
+        // Handle tab switching and active state
+        document.querySelectorAll('nav a').forEach(link => {
+            link.addEventListener('click', function(e) {
+                e.preventDefault();
+                document.querySelector('nav a.active').classList.remove('active');
+                document.querySelector('.content-section.active').classList.remove('active');
+                this.classList.add('active');
+                document.getElementById(this.getAttribute('href').substring(1)).classList.add('active');
+            });
+        });
+    </script>
 </body>
 </html>
