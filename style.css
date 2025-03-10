@@ -1,70 +1,94 @@
-/* Reset default styles */
+/* Reset defaults */
 * {
     margin: 0;
     padding: 0;
     box-sizing: border-box;
 }
 
-/* Header styling */
-header {
-    background-color: #333;
-    color: white;
-    text-align: center;
-    padding: 1rem;
-}
-
-/* Navigation styling */
-nav {
+body {
+    font-family: 'Roboto', sans-serif;
     background-color: #f4f4f4;
-    border-bottom: 1px solid #ccc;
+    color: #333;
+    line-height: 1.5;
 }
 
-nav ul {
+/* Navigation styling (MSN-inspired dark bar) */
+.main-nav {
+    background-color: #1a1a1a;
+    padding: 0.5rem 1rem;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
+}
+
+.main-nav ul {
     list-style: none;
     display: flex;
     justify-content: center;
+    gap: 1rem;
 }
 
-nav ul li {
-    margin: 0 20px;
-}
-
-nav ul li a {
+.main-nav ul li a {
+    color: #fff;
     text-decoration: none;
-    color: #333;
-    font-weight: bold;
-    padding: 15px;
-    display: block;
+    padding: 0.75rem 1.5rem;
+    font-weight: 700;
+    transition: background-color 0.3s;
 }
 
-nav ul li a:hover {
-    background-color: #ddd;
+.main-nav ul li a:hover, .main-nav ul li a.active {
+    background-color: #333;
+    border-radius: 4px;
 }
 
-/* Main content styling */
+/* Main content styling (tiled layout) */
 main {
     padding: 20px;
+    max-width: 1200px;
+    margin: 0 auto;
 }
 
-section {
+.content-section {
     display: none;
-    margin-top: 20px;
+    flex-wrap: wrap;
+    gap: 20px;
 }
 
-section:target {
-    display: block;
+.content-section.active {
+    display: flex;
 }
 
-h2 {
-    color: #333;
-    margin-bottom: 10px;
+.tile {
+    background-color: #fff;
+    border: 1px solid #ddd;
+    border-radius: 4px;
+    overflow: hidden;
+    width: 300px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    transition: transform 0.2s;
 }
 
-p {
-    line-height: 1.6;
+.tile:hover {
+    transform: translateY(-5px);
 }
 
-/* Show the first section by default */
+.tile img {
+    width: 100%;
+    height: 200px;
+    object-fit: cover;
+}
+
+.tile h3 {
+    font-size: 1.2rem;
+    padding: 10px;
+    color: #1a1a1a;
+}
+
+.tile p {
+    padding: 0 10px 10px;
+    font-size: 0.9rem;
+    color: #666;
+}
+
+/* Show Racing section by default */
 #racing {
-    display: block;
+    display: flex;
 }
