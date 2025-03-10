@@ -12,17 +12,26 @@ body {
     line-height: 1.5;
 }
 
-/* Navigation styling (MSN-inspired dark bar) */
+/* Navigation styling (MSN-inspired dark bar with site title) */
 .main-nav {
     background-color: #1a1a1a;
     padding: 0.5rem 1rem;
     box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.site-title {
+    color: #fff;
+    font-size: 1.5rem;
+    font-weight: 700;
+    margin-left: 1rem;
 }
 
 .main-nav ul {
     list-style: none;
     display: flex;
-    justify-content: center;
     gap: 1rem;
 }
 
